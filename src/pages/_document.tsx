@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
                     <link rel="shortcut icon" href="favicon-32x32.png" type="image/png"/>
 
                     <link rel="preconnect" href="https://fonts.gstatic.com" />
-                    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap" rel="stylesheet" />
+                    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet" />
                 </Head>
                 <body>
                     <Main />

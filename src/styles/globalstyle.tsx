@@ -8,10 +8,13 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   :root {
-    --white: hsl(0, 0%, 100%)
-    --black: hsl(0, 0%, 0%)
-    --dark-gray: hsl(0, 0%, 55%)
-    --very-dark-gray: hsl(0, 0%, 41%)
+    --dark-gray: hsl(0, 0%, 48%);
+    --black: hsl(0, 0%, 0%);
+    --moderate-cyan: hsl(176, 50%, 47%);
+    --dark-cyan: hsl(176, 72%, 28%);
+    --background: #f2f3f5;
+    --text: #666666;
+    --white: #fff;
   }
   
   @media(max-width: 1080px) {
@@ -27,13 +30,13 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    background: var(--dark-gray);
-    color: var(--black)
+    background: var(--background);
+    color: var(--white)
   }
   
   
   body, input, textarea, button {
-    font: 400 1rem "Alata", sans-serif;
+    font: 400 1rem "Commissioner", sans-serif;
   }
   
   button {
