@@ -1,5 +1,5 @@
 
-import {Container, Header, HeaderContent, Nav} from '../styles/pages'
+import {Container, Header, HeaderContent, Nav, Content, Introduction, Progress, About, TextContent, Buttons} from '../styles/pages'
 export default function Home() {
   return (
       <Container>
@@ -15,6 +15,30 @@ export default function Home() {
               </Nav>
             </HeaderContent>
           </Header>
+          <Content>
+            <Introduction>
+            <img src="/logo-mastercraft.svg"></img>
+            <TextContent>
+              <h1>Mastercraft Bamboo Monitor Riser</h1>
+              <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
+            </TextContent>   
+            <Buttons>
+              <button> Back this project</button>
+              <button>Bookmark</button>
+            </Buttons>
+            </Introduction>
+            <Progress>
+              <p><strong>$89,914</strong><br/> of $100,000 backed</p>
+              <p><strong>5,007</strong><br/> total backers</p>
+              <p><strong>56</strong><br/> days left</p>
+
+              <div>
+                <div style={{width: `30%`}} />
+                <span style={{left: `30%` }}></span>
+              </div>
+            </Progress>
+            <About></About>
+          </Content>
       </Container>
   )
 }
