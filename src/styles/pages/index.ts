@@ -46,7 +46,7 @@ export const Content = styled.main`
 
 export const Introduction = styled.div`
     background: var(--white);
-    height: 200px;
+    height: 230px;
     margin-bottom: 40px;
     display: flex;
     flex-direction: column;
@@ -63,7 +63,7 @@ export const TextContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 
   h1 {
     font-size: 1.75rem;
@@ -73,13 +73,32 @@ export const TextContent = styled.div`
 export const Buttons = styled.div`
     justify-content: space-between;
     width: 600px;
+    height: 50px;
     display: flex;
+`;
 
-    button {
-      padding: 20px 35px;
+export const BackButton = styled.button`
+    background-color: var(--moderate-cyan);
+    color: white;
+    padding: 15px 35px;
+    border-style: none;
+    border-radius: 40px;
+`;
+
+export const BookmarkButton = styled.button`
+      padding: 15px 35px;
       border-style: none;
       border-radius: 40px;
-    }
+      color: var(--dark-gray);
+      font-weight: 700;
+
+      &:before {
+        content: url(/icon-bookmark.svg);
+        width: 20px;
+        transform: translateX(-50px);
+        float: left;
+        margin-top: -17px;
+      } 
 `;
 export const Progress = styled.div`
     background: var(--white);

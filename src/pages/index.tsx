@@ -1,5 +1,5 @@
 
-import {Container, Header, HeaderContent, Nav, Content, Introduction, Progress, About, TextContent, Buttons} from '../styles/pages'
+import {Container, Header, HeaderContent, Nav, Content, Introduction, Progress, About, TextContent, Buttons, BackButton, BookmarkButton} from '../styles/pages'
 export default function Home() {
   return (
       <Container>
@@ -20,11 +20,13 @@ export default function Home() {
             <img src="/logo-mastercraft.svg"></img>
             <TextContent>
               <h1>Mastercraft Bamboo Monitor Riser</h1>
-              <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
+              <p>A beautiful  handcrafted monitor stand to reduce neck and eye strain.</p>
             </TextContent>   
             <Buttons>
-              <button> Back this project</button>
-              <button>Bookmark</button>
+              <BackButton> Back this project</BackButton>
+              <BookmarkButton>
+                    Bookmark
+              </BookmarkButton>
             </Buttons>
             </Introduction>
             <Progress>
