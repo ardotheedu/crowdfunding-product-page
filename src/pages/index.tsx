@@ -30,9 +30,17 @@ export default function Home() {
             </Buttons>
             </Introduction>
             <Progress>
-              <p><strong>$89,914</strong><br/> of $100,000 backed</p>
-              <p><strong>5,007</strong><br/> total backers</p>
-              <p><strong>56</strong><br/> days left</p>
+              <div>
+                <h3><strong>$89,914</strong></h3> 
+                <p> of $100,000 backed</p>
+              </div>
+              <div>
+                <h3><strong>5,007</strong></h3>
+                <p> total backers</p>
+              </div>
+              <div>
+                <h3><strong>56</strong></h3><p>days left</p>
+              </div>
 
               <div>
                 <div style={{width: `30%`}} />

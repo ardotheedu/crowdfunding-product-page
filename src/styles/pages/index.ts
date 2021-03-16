@@ -105,6 +105,26 @@ export const Progress = styled.div`
     margin-bottom: 40px;
     padding: 40px;
     border-radius: 8px;
+    display: flex;
+    
+    div {
+      margin: 0 30px;
+    }
+
+    div:nth-child(2){
+      border-right: 3px solid grey;
+      border-left: 3px solid grey;
+      height: 100%;
+      padding: 0 30px;
+    }
+
+    h3 {
+      font-size: 3rem;
+    }
+
+    div:nth-child(1){
+      margin-left: 0;
+    }
 `;
 
 export const About = styled.div`
