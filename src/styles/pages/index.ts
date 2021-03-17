@@ -105,28 +105,44 @@ export const Progress = styled.div`
     margin-bottom: 40px;
     padding: 40px;
     border-radius: 8px;
-    display: flex;
-    
-    div {
-      margin: 0 30px;
-    }
+`;
 
+export const ProgressInfo = styled.div`
+    display: flex;
+    padding-bottom: 35px;
     div:nth-child(2){
-      border-right: 3px solid grey;
-      border-left: 3px solid grey;
+      border-right: 2px solid #e4e4e4;
+      border-left: 2px solid #e4e4e4;
       height: 100%;
-      padding: 0 30px;
+      padding: 0 60px;
+      margin: 0 60px;
     }
 
     h3 {
-      font-size: 3rem;
-    }
-
-    div:nth-child(1){
-      margin-left: 0;
+      font-size: 2rem;
     }
 `;
 
+
+export const ProgressBar = styled.div`
+  display: flex;
+  align-items: center;
+  
+  & > div {
+    flex: 1;
+    height: 10px;
+    border-radius: 4px;
+    background:  #e4e4e4;
+    position: relative;
+  }
+
+  &  > div > div {
+    width: 80%;
+    height: 10px;
+    border-radius: 4px;
+    background: #3db4ab;
+  }
+`;
 export const About = styled.div`
     background: var(--white);
     margin-bottom: 40px;

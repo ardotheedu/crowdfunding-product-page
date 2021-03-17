@@ -1,5 +1,5 @@
 
-import {Container, Header, HeaderContent, Nav, Content, Introduction, Progress, About, TextContent, Buttons, BackButton, BookmarkButton} from '../styles/pages'
+import {Container, Header, HeaderContent, Nav, Content, Introduction, Progress, About, TextContent, Buttons, BackButton, BookmarkButton, ProgressBar, ProgressInfo} from '../styles/pages'
 export default function Home() {
   return (
       <Container>
@@ -30,23 +30,27 @@ export default function Home() {
             </Buttons>
             </Introduction>
             <Progress>
-              <div>
-                <h3><strong>$89,914</strong></h3> 
-                <p> of $100,000 backed</p>
-              </div>
-              <div>
-                <h3><strong>5,007</strong></h3>
-                <p> total backers</p>
-              </div>
-              <div>
-                <h3><strong>56</strong></h3><p>days left</p>
-              </div>
+              <ProgressInfo>
+                <div>
+                  <h3><strong>$89,914</strong></h3> 
+                  <p> of $100,000 backed</p>
+                </div>
+                <div>
+                  <h3><strong>5,007</strong></h3>
+                  <p> total backers</p>
+                </div>
+                <div>
+                  <h3><strong>56</strong></h3><p>days left</p>
+                </div>
+              </ProgressInfo>
 
-              <div>
-                <div style={{width: `30%`}} />
-                <span style={{left: `30%` }}></span>
-              </div>
+              <ProgressBar>
+                <div>
+                  <div />
+                </div>
+              </ProgressBar>
             </Progress>
+            
             <About></About>
           </Content>
       </Container>
