@@ -1,4 +1,9 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
+
+
+interface ProductProps {
+  available: boolean;
+}
 
 export const Container = styled.div``;
 export const Header = styled.header`
@@ -143,10 +148,75 @@ export const ProgressBar = styled.div`
     background: #3db4ab;
   }
 `;
+
 export const About = styled.div`
     background: var(--white);
     margin-bottom: 40px;
     padding: 40px;
     border-radius: 8px;
+
+    > h3 {
+      margin-bottom: 20px;
+    }
 `;
 
+export const Description = styled.div`
+  p {
+    color: #c9c9c9;
+    margin-bottom: 30px;
+  }
+`;
+export const Product = styled.div<ProductProps>`
+  > p {
+    color: #c9c9c9;
+    margin-bottom: 20px;
+  }
+
+  ${props =>
+      !props.available &&
+      css`
+        opacity: 0.3;
+
+        button {
+          background-color: grey;
+        }
+      `
+  };
+
+  padding: 20px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  margin-bottom: 20px;
+`;
+export const ProductHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+  align-items: center;
+  > h3 {
+    color: #3fb3ab;
+  }
+`;
+export const ProductBottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    align-items: center;
+
+    > h3 {
+      font-size: 2rem;
+    }
+
+    > p {
+      margin-left: 8px;
+      color: #c9c9c9;
+    }
+  }
+`;
+
+export const Products = styled.div`
+
+`;
