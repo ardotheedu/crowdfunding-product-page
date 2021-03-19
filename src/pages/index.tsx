@@ -1,6 +1,20 @@
-
 import {Container, Header, HeaderContent, Nav, Content, Introduction, Progress, About, TextContent, Buttons, BackButton, BookmarkButton, ProgressBar, ProgressInfo, Description, Product, ProductHeader, ProductBottom, Products} from '../styles/pages'
+import {Overlay, ContainerModal} from '../styles/pages/BackProjectModal'
+
+import { useState } from 'react'
+
+
 export default function Home() {
+  const [isBackModalOpen, setIsBackModalOpen] = useState(false)
+
+  function openBackModal() {
+    setIsBackModalOpen(true)
+    console.log(isBackModalOpen)
+  }
+
+  function closeBackModal() {
+    setIsBackModalOpen(false)
+  }
   return (
       <Container>
           <Header>
@@ -23,7 +37,7 @@ export default function Home() {
               <p>A beautiful  handcrafted monitor stand to reduce neck and eye strain.</p>
             </TextContent>   
             <Buttons>
-              <BackButton> Back this project</BackButton>
+              <BackButton onClick={openBackModal}> Back this project</BackButton>
               <BookmarkButton>
                     Bookmark
               </BookmarkButton>
@@ -120,6 +134,36 @@ export default function Home() {
                 </Product>
               </Products>
             </About>
+            {isBackModalOpen && (
+              <Overlay>
+                <ContainerModal>
+                    <button type="button" onClick={closeBackModal}>
+                        <img src="/icon-close-modal.svg" alt="Fechar modal" />
+                    </button>
+                    <h1>Back this project</h1>
+                    <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
+                    <div>
+                      <Product available={true}>
+                          <input type="ratio"/>
+                          <ProductHeader>
+                            <h2>Bamboo Stand</h2>
+                            <h3>Pledge $25 or more</h3>
+                          </ProductHeader>
+                          <p>
+                            You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
+                            you’ll be added to a special Backer member list.
+                          </p>
+                          <ProductBottom>
+                            <div>
+                              <h3>101</h3><p>left</p>
+                            </div>
+                            <BackButton>Select Reward</BackButton>
+                          </ProductBottom>
+                      </Product>
+                    </div>
+                </ContainerModal>
+              </Overlay>
+            )}
           </Content>
       </Container>
   )
