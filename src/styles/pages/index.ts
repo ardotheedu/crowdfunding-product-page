@@ -161,13 +161,11 @@ export const About = styled.div`
 
 export const Description = styled.div`
   p {
-    color: #c9c9c9;
     margin-bottom: 30px;
   }
 `;
 export const Product = styled.div<ProductProps>`
   > p {
-    color: #c9c9c9;
     margin-bottom: 20px;
   }
 
@@ -219,3 +217,4 @@ export const ProductBottom = styled.div`
 export const Products = styled.div`
 
 `;
+

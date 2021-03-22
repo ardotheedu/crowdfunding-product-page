@@ -47,6 +47,9 @@ export const GlobalStyle = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
+  p {
+    color: #c9c9c9;
+  }
 `;
 
 const BasicLayout = ({ children }: { children: any }) => {
