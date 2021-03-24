@@ -7,7 +7,7 @@ interface ProductProps {
 
  export const Overlay = styled.div`
     background: rgba(0,0,0,0.4);
-    position: fixed;
+    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
@@ -16,14 +16,15 @@ interface ProductProps {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-y: auto;
+    height: 1857px;
 
 `
 
 export const ContainerModal = styled.div`
-    transform: translateY(30%);
     background: var(--white);
+    transform: translateY(-27%);
     width: 100%;
+    height: 53%;
     max-width: 700px;
     padding: 2rem 3rem;
     border-radius: 5px;
@@ -32,7 +33,11 @@ export const ContainerModal = styled.div`
 
 
     > p {
-      margin: 20px 0;
+      margin: 20px 0 30px 0;
+    }
+
+    > div {
+      height: 100%
     }
 
 `;
@@ -44,10 +49,21 @@ export const ModalProduct = styled.div<ProductProps>`
 
   > div {
     display: flex;
-    align-items: baseline;
-    padding: 15px;
-    div:nth-child(1) {
+    padding: 20px;
+    > div {
+      > p {
+        text-align: justify;
+        margin: 20px 0;
+      }
+    }
+    > div:nth-child(1) {
       margin-right: 20px;
+      
+      > input[type=radio] {
+          border: 0px;
+          width: 20px;
+          height: 20px;
+      }
     }
   }
 
@@ -78,13 +94,13 @@ export const ModalProduct = styled.div<ProductProps>`
       `
   };
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `
 export const ModalProductHeader = styled.div`
   display: flex;
   justify-content: space-between;
 
-  margin-bottom: 20px;
+  
   align-items: center;
   > div {
     display: flex;
@@ -94,6 +110,7 @@ export const ModalProductHeader = styled.div`
       margin-right: 10px;
     }
     > h3 {
+      font-size: 1rem;
       margin-right: 10px;
     }
   }
@@ -137,6 +154,7 @@ export const ModalProductBottom = styled.div`
   }
   button:nth-child(2){
     color: white;
+    margin-left: 10px;
     background-color: var(--moderate-cyan);
     border-style: none;
   }

@@ -1,12 +1,13 @@
-import {Container, Header, HeaderContent, Nav, Content, Introduction, Progress, About, TextContent, Buttons, BackButton, BookmarkButton, ProgressBar, ProgressInfo, Description, Product, ProductHeader, ProductBottom, Products} from '../styles/pages'
+import {Container, Header, HeaderContent, StyledMenu, Content, Introduction, Progress, About, TextContent, Buttons, BackButton, BookmarkButton, ProgressBar, ProgressInfo, Description, Product, ProductHeader, ProductBottom, Products} from '../styles/pages'
 import {Overlay, ContainerModal, ModalProduct, ModalProductHeader, ModalProductBottom, ModalPledge, CloseButton} from '../styles/pages/BackProjectModal'
-
+import  Menu  from '../Components/Menu'
 import { useState } from 'react'
 
 
 export default function Home() {
   const [isBackModalOpen, setIsBackModalOpen] = useState(false)
   const [isOptionSelected, setIsOptionSelected] = useState('')
+  const [open, setOpen] = useState(false);
 
 
   function openBackModal() {
@@ -21,13 +22,7 @@ export default function Home() {
           <Header>
             <HeaderContent>
               <img src="/logo.svg"></img>
-              <Nav>
-                <ul>
-                  <li><a>About</a></li>
-                  <li><a>Discover</a></li>
-                  <li><a>Get Started</a></li>
-                </ul>
-              </Nav>
+              <Menu open={open} />
             </HeaderContent>
           </Header>
           <Content>
@@ -233,7 +228,7 @@ export default function Home() {
                       </ModalProduct>
                       <ModalProduct available={true} optionSelected={isOptionSelected === 'Black Edition Stand'}>
                         <div>
-                          <div>
+                        <div>
                             <input type="radio" name="back_option" onFocus={() => setIsOptionSelected('Black Edition Stand')}/>
                           </div>
                           <div>
