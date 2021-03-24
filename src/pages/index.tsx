@@ -1,15 +1,14 @@
 import { useContext } from 'react'
 import { ModalContext, ModalProvider } from '../contexts/modalContext'
-import {Container, Header, HeaderContent, StyledMenu, Content, Introduction, Progress, About, TextContent, Buttons, BackButton, BookmarkButton, ProgressBar, ProgressInfo, Description, Product, ProductHeader, ProductBottom, Products} from '../styles/pages'
+import {Container, Header, HeaderContent, StyledMenu, Content, Introduction, BackButton, Progress, About, TextContent, ProgressBar, ProgressInfo, Description, Product, ProductHeader, ProductBottom, Products} from '../styles/pages'
 
 import  Menu  from '../components/Menu'
-import  Modal from '../components/Modal'
+import  Buttons from '../components/Buttons'
 import { useState } from 'react'
 
 
 export default function Home() {
   const [open, setOpen] = useState(false);
-  const { openBackModal } = useContext(ModalContext)
   
   return (
     <ModalProvider>
@@ -27,12 +26,7 @@ export default function Home() {
               <h1>Mastercraft Bamboo Monitor Riser</h1>
               <p>A beautiful  handcrafted monitor stand to reduce neck and eye strain.</p>
             </TextContent>   
-            <Buttons>
-              <BackButton onClick={openBackModal}> Back this project</BackButton>
-              <BookmarkButton>
-                    Bookmark
-              </BookmarkButton>
-            </Buttons>
+              <Buttons />
             </Introduction>
             <Progress>
               <ProgressInfo>
