@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyledMenu } from '../../styles/pages/index';
 
-export default function Menu({ open }) {
+export default function Menu() {
 
   return (
-    <StyledMenu open={open} >
+    <StyledMenu >
         <a href="/">
             About
         </a>

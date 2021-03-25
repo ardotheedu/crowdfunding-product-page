@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import { useContext } from 'react'
 import { ModalContext } from '../../contexts/modalContext'
+import {products} from '../../product'
+
 import {Overlay, ContainerModal, ModalProduct, ModalProductHeader, ModalProductBottom, ModalPledge, CloseButton} from '../../styles/pages/BackProjectModal'
 
 export default function Modal() {
@@ -59,136 +61,56 @@ export default function Modal() {
     
                         
                     </ModalProduct>
-                    <ModalProduct available={true} optionSelected={isOptionSelected === 'Bamboo Stand'}>
-                        <div>
-                        <div>
-                            <input type="radio" name="back_option" onFocus={() => setIsOptionSelected('Bamboo Stand')}/>
-                        </div>
-                        <div>
-                            <ModalProductHeader>
+                    
+                    {products.map(product => {
+                        return (
+                            <ModalProduct available={product.products_left ? true : false} optionSelected={isOptionSelected === product.name}>
                             <div>
-                                <h3>Bamboo Stand</h3>
-                                <ModalPledge>Pledge $25 or more</ModalPledge>
+                            <div>
+                                <input type="radio" name="back_option" onFocus={() => setIsOptionSelected(product.name)}/>
                             </div>
                             <div>
-                                <h3>101</h3><p>left</p>
-                            </div>
-                            </ModalProductHeader>
-                            <p>
-                            You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
-                            you’ll be added to a special Backer member list.
-                            </p>
-                        
-                        </div>
-                        </div>
-    
-                        {isOptionSelected === 'Bamboo Stand' && (
-                        <> 
-                        
-                            <hr />
-    
-                            <div>
-                            <ModalProductBottom>
+                                <ModalProductHeader>
                                 <div>
-                                    <input type="text" placeholder="Enter you pledge"></input>
+                                    <h3>{product.name}</h3>
+                                    <ModalPledge>Pledge ${product.price} or more</ModalPledge>
                                 </div>
                                 <div>
-                                    <button><p>$</p><strong>25</strong></button>
-                                    <button>Continue</button>
+                                    <h3>{product.products_left}</h3><p>left</p>
                                 </div>
-                            </ModalProductBottom>
+                                </ModalProductHeader>
+                                <p>
+                                    {product.description}
+                                </p>
+                            
                             </div>
-                        </>
-                        )}
-    
-                        
-                    </ModalProduct>
-                    <ModalProduct available={true} optionSelected={isOptionSelected === 'Black Edition Stand'}>
-                        <div>
-                        <div>
-                            <input type="radio" name="back_option" onFocus={() => setIsOptionSelected('Black Edition Stand')}/>
-                        </div>
-                        <div>
-                            <ModalProductHeader>
-                            <div>
-                                <h3>Black Edition Stand</h3>
-                                <ModalPledge>Pledge $75 or more</ModalPledge>
                             </div>
-                            <div>
-                                <h3>64</h3><p>left</p>
-                            </div>
-                            </ModalProductHeader>
-                            <p>
-                            You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
-                            member list. Shipping is included.
-                            </p>
-                        
-                        </div>
-                        </div>
-    
-                        {isOptionSelected === 'Black Edition Stand' && (
-                        <> 
-                        
-                            <hr />
-    
-                            <div>
-                            <ModalProductBottom>
+        
+                            {isOptionSelected === 'Bamboo Stand' && (
+                            <> 
+                            
+                                <hr />
+        
                                 <div>
-                                    <input type="text" placeholder="Enter you pledge"></input>
+                                <ModalProductBottom>
+                                    <div>
+                                        <input type="text" placeholder="Enter you pledge"></input>
+                                    </div>
+                                    <div>
+                                        <button><p>$</p><strong>25</strong></button>
+                                        <button>Continue</button>
+                                    </div>
+                                </ModalProductBottom>
                                 </div>
-                                <div>
-                                    <button><p>$</p><strong>75</strong></button>
-                                    <button>Continue</button>
-                                </div>
-                            </ModalProductBottom>
-                            </div>
-                        </>
-                        )}
-    
-                        
-                    </ModalProduct>
-                    <ModalProduct available={false} optionSelected={isOptionSelected === 'Mahogany Special Edition'}>
-                        <div>
-                        <div>
-                            <input type="radio" name="back_option" onFocus={() => setIsOptionSelected('Mahogany Special Edition')}/>
-                        </div>
-                        <div>
-                            <ModalProductHeader>
-                            <div>
-                                <h3>Mahogany Special Edition</h3>
-                                <ModalPledge>Pledge $200 or more</ModalPledge>
-                            </div>
-                            <div>
-                                <h3>0</h3><p>left</p>
-                            </div>
-                            </ModalProductHeader>
-                            <p>
-                            You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
-                            to our Backer member list. Shipping is included.
-                            </p>
-                        
-                        </div>
-                        </div>
-    
-                        {isOptionSelected === 'Mahogany Special Edition' && (
-                        <> 
-                        
-                            <hr />
-    
-                            <div>
-                            <ModalProductBottom>
-                                <div>
-                                    <input type="text" placeholder="Enter you pledge"></input>
-                                </div>
-                                <div>
-                                    <button><p>$</p><strong>200</strong></button>
-                                    <button>Continue</button>
-                                </div>
-                            </ModalProductBottom>
-                            </div>
-                        </>
-                        )}
+                            </>
+                            )}
+        
+                            
                         </ModalProduct>
+                        )
+                    })}
+                    
+                    
                     </div>    
                 </ContainerModal>
             </Overlay>

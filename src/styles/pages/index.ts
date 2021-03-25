@@ -32,7 +32,7 @@ export const HeaderContent = styled.div`
  }
 `;
 
-export const StyledMenu = styled.nav<IsOpen>`
+export const StyledMenu = styled.nav`
   /* display: flex;
   flex-direction: column;
   justify-content: center;
