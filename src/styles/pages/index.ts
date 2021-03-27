@@ -32,55 +32,14 @@ export const HeaderContent = styled.div`
  }
 `;
 
-export const StyledMenu = styled.nav`
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #EFFFFA;
-  transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(0)'};
-  height: 100vh;
-  text-align: left;
-  padding: 2rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.3s ease-in-out;
 
-  @media (max-width: 576px) {
-      width: 100%;
-    }
-
-  a {
-    font-size: 2rem;
-    text-transform: uppercase;
-    padding: 2rem 0;
-    font-weight: bold;
-    letter-spacing: 0.5rem;
-    color: #0D0C1D;
-    text-decoration: none;
-    transition: color 0.3s linear;
-
-    @media (max-width: 576px) {
-      font-size: 1.5rem;
-      text-align: center;
-    }
-
-    &:hover {
-      color: #343078;
-    } */
-  @media (min-width: 1000px) {
-    a {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      
-      margin-left: 20px;
-      color: white;
-  }
-  }
-`;
 
 export const Content = styled.main`
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-8rem);
   @media (min-width: 1000px) {
     max-width: 700px;
     margin: 0 auto;
@@ -91,6 +50,18 @@ export const Content = styled.main`
 `;
 
 export const Introduction = styled.div`
+    background: var(--white);
+    text-align: center;
+    height: 230px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+
+    img {
+      transform: translateY(-50%)
+    }
   @media (min-width: 1000px) {
     background: var(--white);
     height: 230px;
@@ -106,6 +77,14 @@ export const Introduction = styled.div`
   }
 `;
 export const TextContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 7px;
+
+    h1 {
+      font-size: 1.75rem;
+    }
   @media (min-width: 1000px) {
     display: flex;
     flex-direction: column;
@@ -119,6 +98,9 @@ export const TextContent = styled.div`
 `;
 
 export const Buttons = styled.div`
+    width: 90%;
+    height: 59px;
+    display: flex;
   @media (min-width: 1000px) {
     justify-content: space-between;
     width: 600px;
@@ -128,6 +110,11 @@ export const Buttons = styled.div`
 `;
 
 export const BackButton = styled.button`
+      background-color: var(--moderate-cyan);
+    color: white;
+    width: 90%;
+    border-style: none;
+    border-radius: 40px;
   @media (min-width: 1000px) {
     background-color: var(--moderate-cyan);
     color: white;
@@ -138,7 +125,17 @@ export const BackButton = styled.button`
 `;
 
 export const BookmarkButton = styled.button`
+  visibility: hidden;
+  &:before {
+        visibility: visible;
+        content: url(/icon-bookmark.svg);
+        width: 20px;
+        float: left;
+  } 
+  border-style: none;
   @media (min-width: 1000px) {
+    visibility: visible;
+
       padding: 15px 35px;
       border-style: none;
       border-radius: 40px;
