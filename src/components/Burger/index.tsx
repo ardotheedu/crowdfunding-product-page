@@ -9,13 +9,13 @@ interface BurguerProps {
 const StyledBurger = styled.div<BurguerProps>`
   width: 2rem;
   height: 2rem;
-  position: fixed;
+  position: absolute;
   top: 15px;
   right: 20px;
   z-index: 20;
   display: none;
   @media (max-width: 768px) {
-    transform: translateY(32px);
+    transform: translateY(100%);
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;

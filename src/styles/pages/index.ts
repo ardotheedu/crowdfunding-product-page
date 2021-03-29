@@ -39,7 +39,8 @@ export const Content = styled.main`
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    transform: translateY(-8rem);
+    transform: translateY(-23vh);
+
   @media (min-width: 1000px) {
     max-width: 700px;
     margin: 0 auto;
@@ -47,20 +48,24 @@ export const Content = styled.main`
     flex-direction: column;
     transform: translateY(-70px);
   }
+
+  @media (min-height: 1366px) {
+    transform: translateY(-38vh);
+  }
 `;
 
 export const Introduction = styled.div`
     background: var(--white);
-    text-align: center;
-    height: 230px;
     margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     border-radius: 8px;
+    padding: 20px;
 
     img {
-      transform: translateY(-50%)
+      transform: translateY(-80%)
     }
   @media (min-width: 1000px) {
     background: var(--white);
@@ -70,7 +75,7 @@ export const Introduction = styled.div`
     flex-direction: column;
     align-items: center;
     border-radius: 8px;
-
+    padding: 0;
     img {
       transform: translateY(-50%)
     }
@@ -81,9 +86,11 @@ export const TextContent = styled.div`
     flex-direction: column;
     align-items: center;
     margin-bottom: 7px;
-
+    p {
+      margin: 5px 0;
+    }
     h1 {
-      font-size: 1.75rem;
+      font-size: 2rem;
     }
   @media (min-width: 1000px) {
     display: flex;
@@ -98,7 +105,7 @@ export const TextContent = styled.div`
 `;
 
 export const Buttons = styled.div`
-    width: 90%;
+    width: 82%;
     height: 59px;
     display: flex;
   @media (min-width: 1000px) {
@@ -116,9 +123,9 @@ export const BackButton = styled.button`
     border-style: none;
     border-radius: 40px;
   @media (min-width: 1000px) {
+    width: 30%;
     background-color: var(--moderate-cyan);
     color: white;
-    padding: 15px 35px;
     border-style: none;
     border-radius: 40px;
   }
@@ -126,6 +133,7 @@ export const BackButton = styled.button`
 
 export const BookmarkButton = styled.button`
   visibility: hidden;
+  margin-left: 3%;
   &:before {
         visibility: visible;
         content: url(/icon-bookmark.svg);
@@ -135,6 +143,7 @@ export const BookmarkButton = styled.button`
   border-style: none;
   @media (min-width: 1000px) {
     visibility: visible;
+    margin-left: 0%;
 
       padding: 15px 35px;
       border-style: none;
@@ -152,6 +161,16 @@ export const BookmarkButton = styled.button`
   }
 `;
 export const Progress = styled.div`
+  @media (max-width: 768px) {
+    text-align: center;
+    background: var(--white);
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 8px;
+    h3 {
+      font-size: 2.4rem;
+    }
+  }
   @media (min-width: 1000px) {
     background: var(--white);
     margin-bottom: 40px;
@@ -161,9 +180,22 @@ export const Progress = styled.div`
 `;
 
 export const ProgressInfo = styled.div`
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div:nth-child(2){
+      border-top: 2px solid #e4e4e4;
+      border-bottom: 2px solid #e4e4e4;
+
+      padding: 0.5rem 0;
+      margin: 0.5rem 0;
+    }
+  }
   @media (min-width: 1000px) {
     display: flex;
     padding-bottom: 35px;
+
     div:nth-child(2){
       border-right: 2px solid #e4e4e4;
       border-left: 2px solid #e4e4e4;
@@ -180,6 +212,25 @@ export const ProgressInfo = styled.div`
 
 
 export const ProgressBar = styled.div`
+ @media (max-width: 768px) {
+  display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    & > div {
+      flex: 1;
+      height: 10px;
+      border-radius: 4px;
+      background:  #e4e4e4;
+      position: relative;
+    }
+
+    &  > div > div {
+      width: 80%;
+      height: 10px;
+      border-radius: 4px;
+      background: #3db4ab;
+    }
+ }
   @media (min-width: 1000px) {
     display: flex;
     align-items: center;
@@ -202,6 +253,17 @@ export const ProgressBar = styled.div`
 `;
 
 export const About = styled.div`
+  @media (max-width: 768px) {
+    background: var(--white);
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 8px;
+
+    > h3 {
+      margin-bottom: 10px;
+    }
+  }
+
   @media (min-width: 1000px) {
     background: var(--white);
     margin-bottom: 40px;
@@ -215,6 +277,11 @@ export const About = styled.div`
 `;
 
 export const Description = styled.div`
+  @media (max-width: 768px) {
+    p {
+      margin-bottom: 15px;
+    }
+  }
   @media (min-width: 1000px) {
     p {
       margin-bottom: 30px;
@@ -222,8 +289,6 @@ export const Description = styled.div`
   }
 `;
 export const Product = styled.div<ProductProps>`
-  @media (min-width: 1000px) {
-  
     > p {
       margin-bottom: 20px;
     }
@@ -243,30 +308,32 @@ export const Product = styled.div<ProductProps>`
     border: 1px solid #dddddd;
     border-radius: 10px;
     margin-bottom: 20px;
-  }
+
 `;
 export const ProductHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  > h3 {
+      color: #3fb3ab;
+  }
+  
   @media (min-width: 1000px) {
-
-    display: flex;
+    flex-direction: unset;
     justify-content: space-between;
 
     margin-bottom: 20px;
     align-items: center;
-    > h3 {
-      color: #3fb3ab;
-    }
   }
 `;
 export const ProductBottom = styled.div`
-  @media (min-width: 1000px) {
+  display: flex;
+  flex-direction: column;
   
-    display: flex;
-    justify-content: space-between;
-
     div {
       display: flex;
       align-items: center;
+      margin-bottom: 10px;
 
       > h3 {
         font-size: 2rem;
@@ -277,6 +344,27 @@ export const ProductBottom = styled.div`
         color: #c9c9c9;
       }
     }
+  
+  @media (max-width: 768px) {
+    button {
+      width: 50%;
+      padding: 15px 0;
+      font-size: 0.9rem;
+      
+      p {
+        font-size: 0.5rem;
+      }
+    }
+  }
+  @media (min-width: 1000px) {
+  
+    flex-direction: unset;
+
+    div {
+      margin-bottom: 10px;
+    }
+    justify-content: space-between;
+
   }
 `;
 
