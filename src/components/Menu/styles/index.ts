@@ -11,7 +11,7 @@ export const Nav = styled.nav`
       }
     }
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 769px) {
     width: 100%;
     padding: 0 10%;
     display: flex;

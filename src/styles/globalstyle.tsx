@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   :root {
     --dark-gray: hsl(0, 0%, 48%);
     --black: hsl(0, 0%, 0%);
@@ -16,33 +16,33 @@ export const GlobalStyle = createGlobalStyle`
     --text: #666666;
     --white: #fff;
   }
-  
+
   @media(max-width: 1080px) {
     html {
         font-size: 93.75%
     }
   }
-  
+
   @media(max-width: 720px) {
     html {
         font-size: 87.5%
     }
   }
-  
+
   body {
     background: var(--background);
     color: var(--black)
   }
-  
-  
+
+
   body, input, textarea, button {
     font: 400 1rem "Commissioner", sans-serif;
   }
-  
+
   button {
     cursor: pointer;
   }
-  
+
   a {
     color: inherit;
     text-decoration: none;
