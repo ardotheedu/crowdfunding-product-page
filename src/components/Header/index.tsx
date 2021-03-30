@@ -1,12 +1,12 @@
 import React from 'react';
-import Menu  from '../Menu'
+import Menu from '../Menu';
 
-import { Header, HeaderContent} from '../../styles/pages/index';
+import { Header } from '../../styles/pages/index';
 
 export default function HeaderComponent() {
   return (
     <Header>
-        <Menu />
+      <Menu />
     </Header>
   );
 }

@@ -1,16 +1,15 @@
 import React from 'react';
 import Burger from '../Burger';
 
-import {Nav} from './styles'
+import { Nav } from './styles';
 
 export default function Navbar() {
-
   return (
-    <Nav >
+    <Nav>
       <div className="logo">
-        <img src="/logo.svg"></img>
+        <img src="/logo.svg" alt="button" />
       </div>
       <Burger />
     </Nav>
-  )
+  );
 }

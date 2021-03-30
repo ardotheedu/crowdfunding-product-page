@@ -1,5 +1,5 @@
 import React from 'react';
-import { Ul } from './styles'
+import { Ul } from './styles';
 
 const RightNav = ({ open }) => {
   return (
@@ -8,7 +8,7 @@ const RightNav = ({ open }) => {
       <li>Discover</li>
       <li>Get Started</li>
     </Ul>
-  )
-}
+  );
+};
 
-export default RightNav
+export default RightNav;

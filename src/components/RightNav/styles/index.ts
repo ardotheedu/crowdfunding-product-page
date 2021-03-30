@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface UlProps {
-    open: boolean;
+  open: boolean;
 }
 export const Ul = styled.ul<UlProps>`
   list-style: none;
@@ -17,7 +17,7 @@ export const Ul = styled.ul<UlProps>`
     flex-flow: column nowrap;
     background-color: hsl(0, 0%, 0%);
     position: fixed;
-    transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
+    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
     top: 0;
     right: 0;
     height: 100vh;

@@ -1,39 +1,37 @@
-import { createContext, useState, ReactNode, useEffect } from 'react'
-import  Modal  from '../components/Modal'
+import { createContext, useState, ReactNode } from 'react';
+import Modal from '../components/Modal';
 
-export const ModalContext = createContext({} as ModalContextData)
+export const ModalContext = createContext({} as ModalContextData);
 
 interface ModalContextData {
-    closeBackModal: () => void,
-    openBackModal: () => void,
+  closeBackModal: () => void;
+  openBackModal: () => void;
 }
 
 interface ModalProviderProps {
-    children: ReactNode;
+  children: ReactNode;
 }
 
-export function ModalProvider({children}: ModalProviderProps) {
+export function ModalProvider({ children }: ModalProviderProps) {
+  const [isBackModalOpen, setIsBackModalOpen] = useState(false);
 
-    const [isBackModalOpen, setIsBackModalOpen] = useState(false)
+  function openBackModal() {
+    setIsBackModalOpen(true);
+  }
 
-    function openBackModal() {
-        setIsBackModalOpen(true)
-    }
+  function closeBackModal() {
+    setIsBackModalOpen(false);
+  }
 
-    function closeBackModal() {
-        setIsBackModalOpen(false)
-    }
-
-    
-    return (
-        <ModalContext.Provider 
-            value={{
-                openBackModal,
-                closeBackModal,
-            }}
-        >
-            {children}
-            {isBackModalOpen && <Modal />}
-        </ModalContext.Provider>
-    )
+  return (
+    <ModalContext.Provider
+      value={{
+        openBackModal,
+        closeBackModal,
+      }}
+    >
+      {children}
+      {isBackModalOpen && <Modal />}
+    </ModalContext.Provider>
+  );
 }
