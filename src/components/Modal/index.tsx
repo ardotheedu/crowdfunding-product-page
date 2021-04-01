@@ -84,11 +84,20 @@ export default function Modal() {
               >
                 <div>
                   <div>
-                    <input
-                      type="radio"
-                      name="back_option"
-                      onFocus={() => setIsOptionSelected(product.name)}
-                    />
+                    {product.products_left > 0 ? (
+                      <input
+                        type="radio"
+                        name="back_option"
+                        onFocus={() => setIsOptionSelected(product.name)}
+                      />
+                    ) : (
+                      <input
+                        disabled
+                        type="radio"
+                        name="back_option"
+                        onFocus={() => setIsOptionSelected(product.name)}
+                      />
+                    )}
                   </div>
                   <div>
                     <ModalProductHeader>
@@ -107,7 +116,7 @@ export default function Modal() {
                   </div>
                 </div>
 
-                {isOptionSelected === 'Bamboo Stand' && (
+                {isOptionSelected === product.name && (
                   <>
                     <hr />
 
@@ -119,7 +128,7 @@ export default function Modal() {
                         <div>
                           <button type="button">
                             <p>$</p>
-                            <strong>25</strong>
+                            <strong>{product.price}</strong>
                           </button>
                           <button type="button">Continue</button>
                         </div>

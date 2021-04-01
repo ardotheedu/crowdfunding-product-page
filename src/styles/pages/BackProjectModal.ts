@@ -17,6 +17,9 @@ export const Overlay = styled.div`
   justify-content: center;
   align-items: center;
   height: 1857px;
+  @media (max-width: 769px) {
+    height: 2348px;
+  }
 `;
 
 export const ContainerModal = styled.div`
@@ -113,9 +116,9 @@ export const ModalProductBottom = styled.div`
   display: flex;
 
   width: 100%;
-  justify-content: space-between;
 
   div {
+    width: 50%;
     display: flex;
     align-items: center;
 
@@ -128,12 +131,14 @@ export const ModalProductBottom = styled.div`
     }
   }
   input {
+    width: 100%;
+    font-size: 0.9rem;
     border-style: none;
     padding: 10px 0;
   }
 
   button {
-    padding: 12px 20px;
+    padding: 6px 10px;
     border-radius: 40px;
   }
   button:nth-child(1) {
@@ -151,6 +156,25 @@ export const ModalProductBottom = styled.div`
     margin-left: 10px;
     background-color: var(--moderate-cyan);
     border-style: none;
+  }
+
+  @media (min-width: 769px) {
+    display: flex;
+
+    width: 100%;
+    justify-content: space-between;
+
+    div {
+      width: 100%;
+    }
+    input {
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 12px 20px;
+      border-radius: 40px;
+    }
   }
 `;
 
