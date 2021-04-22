@@ -7,6 +7,13 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+}
+
   :root {
     --dark-gray: hsl(0, 0%, 48%);
     --black: hsl(0, 0%, 0%);
@@ -50,6 +57,39 @@ export const GlobalStyle = createGlobalStyle`
   p {
     color: #c9c9c9;
   }
+  .ReactModal__Body--open {
+    position: relative;
+  }
+  .react-modal-overlay {
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .react-modal-content {
+        width: 100%;
+        max-width: 720px;
+        margin: 13% 0 0 0;
+        height: 70%;
+        background: var(--white);
+        padding: 3rem;
+        position: relative;
+        border-radius: 0.24rem;
+
+    }
+    .react-modal-close {
+        position: absolute;
+        right: 1.5rem;
+        top: 1.5rem;
+        border: 0;
+        background: transparent;
+        transition: filter 0.2s;
+        filter: brightness(0.8);
+    }
 `;
 
 const BasicLayout = ({ children }: { children: any }) => {

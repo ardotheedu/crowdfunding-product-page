@@ -5,48 +5,10 @@ interface ProductProps {
   optionSelected: boolean;
 }
 
-export const Overlay = styled.div`
-  background: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 1857px;
-  @media (max-width: 769px) {
-    height: 2348px;
-  }
-`;
-
-export const ContainerModal = styled.div`
-  background: var(--white);
-  transform: translateY(-27%);
-  width: 100%;
-  height: 53%;
-  max-width: 700px;
-  padding: 2rem 3rem;
-  border-radius: 5px;
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
-  position: relative;
-
-  > p {
-    margin: 20px 0 30px 0;
-  }
-
-  > div {
-    height: 100%;
-  }
-`;
-
 export const ModalProduct = styled.div<ProductProps>`
   > p {
     margin-bottom: 20px;
   }
-
   > div {
     display: flex;
     padding: 20px;
@@ -58,7 +20,6 @@ export const ModalProduct = styled.div<ProductProps>`
     }
     > div:nth-child(1) {
       margin-right: 20px;
-
       > input[type='radio'] {
         border: 0px;
         width: 20px;
@@ -66,7 +27,6 @@ export const ModalProduct = styled.div<ProductProps>`
       }
     }
   }
-
   hr {
     display: block;
     height: 1px;
@@ -74,17 +34,14 @@ export const ModalProduct = styled.div<ProductProps>`
     border-top: 1px solid #dddddd;
     padding: 0;
   }
-
   ${props =>
     !props.available &&
     css`
       opacity: 0.3;
-
       button {
         background-color: grey;
       }
     `};
-
   border: 1px solid #dddddd;
   ${props =>
     props.optionSelected &&
@@ -97,12 +54,10 @@ export const ModalProduct = styled.div<ProductProps>`
 export const ModalProductHeader = styled.div`
   display: flex;
   justify-content: space-between;
-
   align-items: center;
   > div {
     display: flex;
     align-items: center;
-
     > input {
       margin-right: 10px;
     }
@@ -114,18 +69,14 @@ export const ModalProductHeader = styled.div`
 `;
 export const ModalProductBottom = styled.div`
   display: flex;
-
   width: 100%;
-
   div {
     width: 50%;
     display: flex;
     align-items: center;
-
     > h3 {
       font-size: 2rem;
     }
-
     > p {
       margin-left: 8px;
     }
@@ -136,7 +87,6 @@ export const ModalProductBottom = styled.div`
     border-style: none;
     padding: 10px 0;
   }
-
   button {
     padding: 6px 10px;
     border-radius: 40px;
@@ -157,20 +107,16 @@ export const ModalProductBottom = styled.div`
     background-color: var(--moderate-cyan);
     border-style: none;
   }
-
   @media (min-width: 769px) {
     display: flex;
-
     width: 100%;
     justify-content: space-between;
-
     div {
       width: 100%;
     }
     input {
       font-size: 1rem;
     }
-
     button {
       padding: 12px 20px;
       border-radius: 40px;

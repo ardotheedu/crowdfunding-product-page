@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
-import { useContext } from 'react';
-import { ModalContext } from '../../contexts/modalContext';
+import Modal from 'react-modal';
 import { products } from '../../product';
 
 import {
-  Overlay,
-  ContainerModal,
   ModalProduct,
   ModalProductHeader,
   ModalProductBottom,
@@ -13,15 +10,26 @@ import {
   CloseButton,
 } from '../../styles/pages/BackProjectModal';
 
-export default function Modal() {
+interface NewTransactionModalProps {
+  isOpen: boolean;
+  onRequestClose: () => void;
+}
+
+export default function NewModal({
+  isOpen,
+  onRequestClose,
+}: NewTransactionModalProps) {
   const [isOptionSelected, setIsOptionSelected] = useState('');
 
-  const { closeBackModal } = useContext(ModalContext);
-
   return (
-    <Overlay>
-      <ContainerModal>
-        <CloseButton onClick={closeBackModal}>
+    <div className="modal">
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={onRequestClose}
+        overlayClassName="react-modal-overlay"
+        className="react-modal-content"
+      >
+        <CloseButton onClick={onRequestClose} className="react-modal-close">
           <img src="/icon-close-modal.svg" alt="close button" />
         </CloseButton>
 
@@ -140,7 +148,7 @@ export default function Modal() {
             );
           })}
         </div>
-      </ContainerModal>
-    </Overlay>
+      </Modal>
+    </div>
   );
 }

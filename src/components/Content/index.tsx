@@ -1,12 +1,10 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import Buttons from '../Buttons';
 import { products } from '../../product';
 
 import {
   Content,
   Introduction,
-  BackButton,
   Progress,
   About,
   TextContent,
@@ -19,7 +17,13 @@ import {
   Products,
 } from '../../styles/pages/index';
 
-export default function ContentComponent() {
+import { Buttons, BackButton, BookmarkButton } from '../../styles/pages/index';
+
+interface HeaderProps {
+  onOpenNewModal: () => void;
+}
+
+export default function ContentComponent({ onOpenNewModal }: HeaderProps) {
   return (
     <Content>
       <Introduction>
@@ -30,7 +34,10 @@ export default function ContentComponent() {
             A beautiful handcrafted monitor stand to reduce neck and eye strain.
           </p>
         </TextContent>
-        <Buttons />
+        <Buttons>
+          <BackButton onClick={onOpenNewModal}> Back this project</BackButton>
+          <BookmarkButton>Bookmark</BookmarkButton>
+        </Buttons>
       </Introduction>
       <Progress>
         <ProgressInfo>
