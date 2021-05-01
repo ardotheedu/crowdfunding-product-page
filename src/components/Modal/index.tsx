@@ -8,7 +8,7 @@ import {
   ModalProductBottom,
   ModalPledge,
   CloseButton,
-} from '../../styles/pages/BackProjectModal';
+} from './styles';
 
 interface NewTransactionModalProps {
   isOpen: boolean;

@@ -70,16 +70,27 @@ body {
         display: flex;
         justify-content: center;
     }
+
     .react-modal-content {
-        width: 100%;
+        > p {
+          margin: 2rem 0;
+        }
+        width: 90%;
         max-width: 720px;
-        margin: 13% 0 0 0;
-        height: 70%;
+        margin: 40vh 0 0 0;
+        height: 53%;
         background: var(--white);
         padding: 3rem;
         position: relative;
         border-radius: 0.24rem;
 
+    }
+
+    @media (min-width: 769px) {
+      .react-modal-content {
+        width: 100%;
+        margin: 27vh 0 0 0;
+      }
     }
     .react-modal-close {
         position: absolute;

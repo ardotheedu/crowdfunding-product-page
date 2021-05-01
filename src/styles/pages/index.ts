@@ -38,7 +38,7 @@ export const Content = styled.main`
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    transform: translateY(-70px);
+    transform: translateY(-10vh);
   }
 
   @media (min-height: 1366px) {
@@ -336,7 +336,6 @@ export const ProductBottom = styled.div`
 
   @media (max-width: 768px) {
     button {
-      width: 50%;
       padding: 15px 0;
       font-size: 0.9rem;
 

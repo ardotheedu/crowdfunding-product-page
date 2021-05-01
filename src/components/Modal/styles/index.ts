@@ -49,7 +49,7 @@ export const ModalProduct = styled.div<ProductProps>`
       border: 3px solid var(--moderate-cyan);
     `};
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
 `;
 export const ModalProductHeader = styled.div`
   display: flex;
@@ -72,6 +72,7 @@ export const ModalProductBottom = styled.div`
   width: 100%;
   div {
     width: 50%;
+    justify-content: flex-end;
     display: flex;
     align-items: center;
     > h3 {
