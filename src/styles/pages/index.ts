@@ -38,7 +38,13 @@ export const Content = styled.main`
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    transform: translateY(-10vh);
+    transform: translateY(-20vh);
+  }
+  @media (min-width: 1300px) {
+    transform: translateY(-12vh);
+  }
+  @media (min-width: 1400px) {
+    transform: translateY(-17vh);
   }
 
   @media (min-height: 1366px) {

@@ -61,6 +61,7 @@ body {
     position: relative;
   }
   .react-modal-overlay {
+        z-index: 2;
         background: rgba(0, 0, 0, 0.5);
         position: absolute;
         top: 0;
