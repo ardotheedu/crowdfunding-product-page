@@ -49,7 +49,7 @@ export const Content = styled.main`
     transform: translateY(-12vh);
   }
   @media (min-width: 1400px) {
-    transform: translateY(-17vh);
+    transform: translateY(-18vh);
   }
 
   @media (min-height: 1366px) {
@@ -263,7 +263,7 @@ export const About = styled.div`
     border-radius: 8px;
 
     > h3 {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
   }
 
@@ -274,7 +274,7 @@ export const About = styled.div`
     border-radius: 8px;
 
     > h3 {
-      margin-bottom: 20px;
+      margin: 16px 0 40px 0;
     }
   }
 `;

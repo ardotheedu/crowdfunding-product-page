@@ -20,7 +20,7 @@ body {
     --moderate-cyan: hsl(176, 50%, 47%);
     --dark-cyan: hsl(176, 72%, 28%);
     --background: #f2f3f5;
-    --text: #666666;
+    --text: #455A64;
     --white: #fff;
   }
 
@@ -55,7 +55,8 @@ body {
     text-decoration: none;
   }
   p {
-    color: #c9c9c9;
+    color: #78909C;
+    line-height: 2rem;
   }
   .ReactModal__Body--open {
     position: relative;
