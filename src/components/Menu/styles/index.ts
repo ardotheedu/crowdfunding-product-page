@@ -13,7 +13,7 @@ export const Nav = styled.nav`
   }
   @media (min-width: 769px) {
     width: 100%;
-    padding: 0 10%;
+    padding: 0 11.5%;
     display: flex;
     justify-content: space-between;
     align-items: baseline;

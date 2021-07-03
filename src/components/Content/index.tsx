@@ -36,7 +36,9 @@ export default function ContentComponent({ onOpenNewModal }: HeaderProps) {
         </TextContent>
         <Buttons>
           <BackButton onClick={onOpenNewModal}> Back this project</BackButton>
-          <BookmarkButton>Bookmark</BookmarkButton>
+          <BookmarkButton textColor="--dark-gray" icon="/icon-bookmark.svg">
+            Bookmark
+          </BookmarkButton>
         </Buttons>
       </Introduction>
       <Progress>

@@ -3,6 +3,10 @@ import styled, { css } from 'styled-components';
 interface ProductProps {
   available: boolean;
 }
+interface BookmarkProps {
+  textColor: string;
+  icon: string;
+}
 
 export const Container = styled.div``;
 export const Header = styled.header`
@@ -13,7 +17,8 @@ export const Header = styled.header`
   @media (min-width: 769px) {
     height: 55vh;
     padding: 32px 0;
-    background: url(/image-hero-desktop.jpg) no-repeat;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent),
+      url(/image-hero-desktop.jpg) no-repeat;
     background-size: 100vw;
   }
 `;
@@ -129,12 +134,12 @@ export const BackButton = styled.button`
   }
 `;
 
-export const BookmarkButton = styled.button`
+export const BookmarkButton = styled.button<BookmarkProps>`
   visibility: hidden;
   margin-left: 3%;
   &:before {
     visibility: visible;
-    content: url(/icon-bookmark.svg);
+    content: ${props => `url(${props.icon})`};
     width: 20px;
     float: left;
   }
@@ -146,11 +151,11 @@ export const BookmarkButton = styled.button`
     padding: 15px 35px;
     border-style: none;
     border-radius: 40px;
-    color: var(--dark-gray);
+    color: ${props => `var(${props.textColor})`};
     font-weight: 700;
 
     &:before {
-      content: url(/icon-bookmark.svg);
+      content: ${props => `url(${props.icon})`};
       width: 20px;
       transform: translateX(-50px);
       float: left;
@@ -158,6 +163,7 @@ export const BookmarkButton = styled.button`
     }
   }
 `;
+
 export const Progress = styled.div`
   @media (max-width: 768px) {
     text-align: center;
