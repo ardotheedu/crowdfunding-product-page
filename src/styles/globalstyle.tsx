@@ -9,10 +9,10 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     height: 100%;
-}
-body {
-    min-height: 100%;
-}
+  }
+  body {
+      min-height: 100%;
+  }
 
   :root {
     --dark-gray: hsl(0, 0%, 48%);

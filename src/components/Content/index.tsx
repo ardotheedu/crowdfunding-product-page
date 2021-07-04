@@ -1,5 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import React, { useState } from 'react';
+import CountUp from 'react-countup';
 import { products } from '../../product';
 
 import {
@@ -15,7 +16,7 @@ import {
   ProductHeader,
   ProductBottom,
   Products,
-} from '../../styles/pages/index';
+} from './styles';
 
 import { Buttons, BackButton, BookmarkButton } from '../../styles/pages/index';
 
@@ -64,19 +65,31 @@ export default function ContentComponent({ onOpenNewModal }: HeaderProps) {
         <ProgressInfo>
           <div>
             <h3>
-              <strong>$89,914</strong>
+              <strong>
+                $
+                <CountUp
+                  duration={2.75}
+                  end={89.914}
+                  decimals={3}
+                  decimal=","
+                />
+              </strong>
             </h3>
             <p> of $100,000 backed</p>
           </div>
           <div>
             <h3>
-              <strong>5,007</strong>
+              <strong>
+                <CountUp duration={2.75} end={5.007} decimals={3} decimal="," />
+              </strong>
             </h3>
             <p> total backers</p>
           </div>
           <div>
             <h3>
-              <strong>56</strong>
+              <strong>
+                <CountUp end={56} />
+              </strong>
             </h3>
             <p>days left</p>
           </div>

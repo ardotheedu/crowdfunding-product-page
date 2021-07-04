@@ -89,6 +89,7 @@ export default function NewModal({
               <ModalProduct
                 available={!!product.products_left}
                 optionSelected={isOptionSelected === product.name}
+                key={product.name}
               >
                 <div>
                   <div>
