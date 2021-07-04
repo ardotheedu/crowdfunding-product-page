@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import React from 'react';
+import React, { useState } from 'react';
 import { products } from '../../product';
 
 import {
@@ -24,6 +24,11 @@ interface HeaderProps {
 }
 
 export default function ContentComponent({ onOpenNewModal }: HeaderProps) {
+  const [isBookmarked, setIsBookmarked] = useState(false);
+
+  function handleBookmark() {
+    setIsBookmarked(!isBookmarked);
+  }
   return (
     <Content>
       <Introduction>
@@ -36,9 +41,23 @@ export default function ContentComponent({ onOpenNewModal }: HeaderProps) {
         </TextContent>
         <Buttons>
           <BackButton onClick={onOpenNewModal}> Back this project</BackButton>
-          <BookmarkButton textColor="--dark-gray" icon="/icon-bookmark.svg">
-            Bookmark
-          </BookmarkButton>
+          {isBookmarked ? (
+            <BookmarkButton
+              textColor="--dark-cyan"
+              icon="/icon-bookmarked.svg"
+              onClick={() => handleBookmark()}
+            >
+              Bookmark
+            </BookmarkButton>
+          ) : (
+            <BookmarkButton
+              textColor="--dark-gray"
+              icon="/icon-bookmark.svg"
+              onClick={() => handleBookmark()}
+            >
+              Bookmark
+            </BookmarkButton>
+          )}
         </Buttons>
       </Introduction>
       <Progress>
