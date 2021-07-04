@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Head from 'next/head';
 import { Container } from '../styles/pages';
 
 import Modal from '../components/Modal';
@@ -16,10 +17,16 @@ export default function Home() {
     setIsBackModalOpen(false);
   }
   return (
-    <Container>
-      <Header />
-      <Content onOpenNewModal={openBackModal} />
-      <Modal isOpen={isBackModalOpen} onRequestClose={closeBackModal} />
-    </Container>
+    <>
+      <Head>
+        <title>Crowdfund</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <Container>
+        <Header />
+        <Content onOpenNewModal={openBackModal} />
+        <Modal isOpen={isBackModalOpen} onRequestClose={closeBackModal} />
+      </Container>
+    </>
   );
 }

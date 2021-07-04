@@ -1,11 +1,11 @@
-import BasicLayout from "../styles/globalstyle";
+import BasicLayout from '../styles/globalstyle';
 
 function MyApp({ Component, pageProps }) {
   return (
     <BasicLayout>
-        <Component {...pageProps} />
+      <Component {...pageProps} />
     </BasicLayout>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
