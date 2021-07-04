@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 interface ProductProps {
   available: boolean;
@@ -154,6 +154,15 @@ export const ProgressInfo = styled.div`
   }
 `;
 
+const loading = keyframes`
+    from {
+      width: 0%;
+    }
+    to {
+      width: 80%;
+    }
+`;
+
 export const ProgressBar = styled.div`
   @media (max-width: 768px) {
     display: flex;
@@ -174,6 +183,7 @@ export const ProgressBar = styled.div`
       background: #3db4ab;
     }
   }
+
   @media (min-width: 769px) {
     display: flex;
     align-items: center;
@@ -191,6 +201,7 @@ export const ProgressBar = styled.div`
       height: 10px;
       border-radius: 4px;
       background: #3db4ab;
+      animation: ${loading} 3s linear;
     }
   }
 `;
