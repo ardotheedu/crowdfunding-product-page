@@ -134,7 +134,11 @@ export default function ContentComponent({ onOpenNewModal }: HeaderProps) {
                     <h3>{product.products_left}</h3>
                     <p>left</p>
                   </div>
-                  <BackButton>Select Reward</BackButton>
+                  {product.products_left ? (
+                    <BackButton>Select Reward</BackButton>
+                  ) : (
+                    <BackButton disabled>Out of stock</BackButton>
+                  )}
                 </ProductBottom>
               </Product>
             );

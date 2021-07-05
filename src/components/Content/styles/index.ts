@@ -15,13 +15,13 @@ export const Content = styled.main`
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    transform: translateY(-20vh);
+    transform: translateY(-18vh);
   }
   @media (min-width: 1300px) {
-    transform: translateY(-12vh);
+    transform: translateY(-21vh);
   }
   @media (min-width: 1400px) {
-    transform: translateY(-18vh);
+    transform: translateY(-25vh);
   }
 
   @media (min-height: 1366px) {
@@ -151,6 +151,29 @@ export const ProgressInfo = styled.div`
     h3 {
       font-size: 2rem;
     }
+    /* Counter com css apenas */
+    /* @property --num {
+      syntax: '<integer>';
+      initial-value: 1000;
+      inherits: false;
+    }
+
+    strong {
+      animation: counter 5s 1 ease-in-out;
+      counter-reset: num var(--num);
+    }
+    strong::after {
+      content: counter(num);
+    }
+
+    @keyframes counter {
+      from {
+        --num: 0;
+      }
+      to {
+        --num: 1.000;
+      }
+    } */
   }
 `;
 
@@ -201,7 +224,7 @@ export const ProgressBar = styled.div`
       height: 10px;
       border-radius: 4px;
       background: #3db4ab;
-      animation: ${loading} 3s linear;
+      animation: ${loading} 3.2s linear;
     }
   }
 `;
