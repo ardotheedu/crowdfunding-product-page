@@ -16,9 +16,10 @@ import {
   ProductHeader,
   ProductBottom,
   Products,
+  Buttons,
+  BackButton,
+  BookmarkButton,
 } from './styles';
-
-import { Buttons, BackButton, BookmarkButton } from '../../styles/pages/index';
 
 interface HeaderProps {
   onOpenNewModal: () => void;
